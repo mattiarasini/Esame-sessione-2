@@ -1,229 +1,139 @@
+@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Oswald:wght@400;700&display=swap');
+
 :root {
+  --normal-font-size: 1rem;
+  --title-color: hsl(0, 0%, 91%);
+  --text-color: hsl(187, 74%, 67%);
+  --text-color-dark: hsl(57, 95%, 0%);
+}
+
+*,
+::after,
+::before {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  text-decoration: none;
+  list-style: none;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Oswald', sans-serif;
+  font-size: var(--normal-font-size);
+  color: var(--text-color);
+}
+
+button {
+  border: none;
+  outline: none;
+  cursor: pointer;
+  font-family: 'Oswald', sans-serif;
+  font-size: var(--normal-font-size);
+}
+
+.container1 {
+  max-width: 1140px;
+  padding: 0 1.5rem;
+  margin: 0 auto;
+}
+
+
+.home {
+  height: 100vh;
+  background: url('../img/man-hero.jpeg');
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  display: grid;
+  justify-items: center;
+}
+
+.home__data {
+  text-align: center;
+  padding: 0 1rem;
+  margin-bottom: 3rem;
+  align-self: flex-end;
+}
+
+.home__title {
+  font-size: 4rem;
+  color: var(--title-color);
+  margin-bottom: 1.5rem;
+}
+
+.home__btns {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+.btn {
+  display: inline-block;
+  padding: 0.5rem 1.5rem;
+  border-radius: 0.1rem;
+  box-shadow: 0 0 0 1px var(--text-color);
+  transition: 0.5s;
+}
+
+.btn:nth-of-type(1) {
+  color: var(--text-color);
+}
+
+.btn:nth-of-type(2) {
+  color: var(--text-color-dark);
+  background: var(--text-color);
+}
+
+.btn:nth-of-type(1):hover {
+  color: var(--text-color-dark);
+  background: var(--text-color);
+}
+
+.btn:nth-of-type(2):hover {
+  color: var(--text-color);
+  background: transparent;
+}
+
+.home__copy {
+  align-self: flex-end;
+  margin-bottom: 0.5rem;
+  font-size: 0.7rem;
+}
+
+.home__copy span {
+  opacity: 0.7;
+}
+
+.home__copy a {
+  color: var(--title-color);
+}
+
+@media (max-width: 991px) {
+  :root {
+    --normal-font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 767px) {
   
-    font-family: "Open Sans", sans-serif;
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    
+
+  .show-menu {
+    top: 4.0rem;
   }
-  body {
-    margin: 0;
-    padding: 0;
-    background-color: $bg;
+
+  .home__title {
+    font-size: 3rem;
   }
-  
-  .flexible {
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: center;
-    align-content: center;
-    text-align: center;
+}
+
+@media (max-width: 575px) {
+  .container {
+    padding: 0 1rem;
   }
-  
-  
-  .home-sec {
-    font-family: "Montserrat", sans-serif;
-    background-color: $bg;
-    text-align: center;
-    min-height: 30rem;
-    height: auto;
-    margin: 0 auto 5rem auto;
-    justify-content: center;
-    max-width: 95rem;
-    color: $testo;
-  }
-  @media (max-width: 800px) {
-    .home-sec {
-      flex-flow: column wrap;
-      max-width: 80%;
-      display: flex;
-      align-items: center;
-    }
-  
-  }
-  .eye-grabber {
-    margin-top: 60px;
-    margin-right: 20px;
-    flex: 1;
-    padding: 0 2rem;
-  }
-  
-  @media (max-width: 800px) {
-    .eye-grabber {
-      max-width: max-content;
-      padding-bottom: 8rem;
-      margin: 0;
-    }
-  
-  }
-  .eye-grabber h1 {
-    padding-bottom: 30px;
-    font-size: 2.5rem;
-    line-height: 1.5;
-    font-weight: 600;
-  }
-  
-  .eye-grabber h2 {
-    font-size: 1.4rem;
-    font-weight: 500;
-    color: #7f7d7d;
-  }
-  
-  @media (max-width: 800px){
-    .eye-grabber h2{
-      font-size: 18px;
-    }
-  }
-  
-  .eye-grabber-img {
-    flex: 1;
-    filter: contrast(1);
-    
-    
-    
-  }
-  @media (max-width: 800px) {
-    .eye-grabber-img {
-      width: 100%;
-      
-    }
-  
-  }
-  .eye-grabber-img img {
-    max-height: 80%;
-    min-width: 70%;
-    max-width: 80%;
-    border-radius: 30px;
-    
-    
-  }
-  .btn {
-    font-family: $carattere;
-    margin-top: 40px;
-    border: none;
-    font-size: 1.5rem;
-    border-radius: 0.4rem;
-    padding: 1rem;
-    background-color: $bg_elementi;
-    color: #3a3a3a;
-    outline: 0;
-    box-shadow: 0 10px 20px rgba(231, 227, 227, 0.492), 0 6px 6px rgba(0, 0, 0, 0.23);
-    transition: all 0.5s;
-  }
-  
-  .btn:hover {
-    background-color: rgb(255, 94, 0);
-    cursor: pointer;
-  }
-  .btn:active {
-    transform: scale(0.9);
-  }
-  .section-heading {
-    font-size: 2.5rem;
-    font-family: "Montserrat", sans-serif;
-    font-weight: 500;
-    line-height: 1.2;
-    margin: 0;
-    padding: 5rem 0 5rem 0;
-    text-align: center;
-  }
-  .sec-content-div {
-    color: $testo;
+
+  .home__title {
     font-size: 2rem;
-    text-align: start;
-    padding: 0 2rem 5rem 2rem;
-    width: auto;
-    justify-content: space-around;
-    max-width: 95rem;
-    margin: 0 auto;
   }
-  .sec-padding {
-    padding: 1rem 0 1rem 0;
-  }
-
-  
-  #about {
-    background-color: #fafafa;
-  }
-  #about img {
-    margin-top: 30px;
-    max-width: 80%;
-    height: 80%;
-    background-color: white;
-    border-radius: 0.5rem;
-    box-shadow: 0 6px 31px -2px rgba(0, 0, 0, 0.1);
-  }
-  #about p{
-    max-width: 80%;
-    font-family: $carattere;
-    text-align: center;
-    color: rgb(99, 99, 99);
-    font-size: 20px;
-    margin-bottom: 30px;
-  }
-  
-  #varieties {
-    background-color: $bg;
-    color: #e3e3e3;
-    
-  }
-  
-  .tile {
-    background-color: #000000;
-    height: 40rem;
-    width: 25rem;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
-    border-radius: 0.5rem;
-    transition: all 0.2s;
-    padding: 1.5rem;
-    margin: 1.5rem;
-    margin-bottom: 35px;
-    
-  }
-  
-  
-  @media (max-width: 680px) {
-    .tile {
-      width: auto;
-      max-width: 100%;
-      min-width: 20rem;
-      margin: 1.5rem auto;
-      height: auto;
-      box-shadow: 0px 0px 10px 5px rgba(255, 255, 255, 0.7); /* Aggiungi un'ombra luminosa quando si passa sopra con il mouse */
-    }
-  }
-
-  
-  .tile img {
-    width: 100%;
-    max-width: 48rem;
-    border-radius: 0.5rem;
-  }
-
-
-  .tile h4 {
-    font-size: 2rem;
-    font-weight: 600;
-    padding: 1rem 0;
-    color: #e23d3d;
-    margin: 0;
-  }
-  .tile p {
-    font-size: 1.3rem;
-    padding: 0;
-    margin: 0;
-  }
-  
-  
-  footer {
-    font-size: 1.4rem;
-    background-color: #ce2f2f;
-    text-align: center;
-    padding: 2rem;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
-    color: #fafafa;
-  }
-  footer a {
-    color: #e3e3e3;
-    text-decoration: none;
-  }
+}

@@ -14,8 +14,8 @@
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
-    gap: 120px 50px;
-    padding: 50px 50px;
+    gap: 90px 70px;
+    padding-top: 90px;
 }
 
 .container .card {
@@ -82,7 +82,7 @@
 .container .card .content h2 {
     font-size: 1.5rem;
     font-weight: 700;
-    color: var(--clr);
+    color: hsl(187, 80%, 56%);
     padding-bottom: 5px;
 }
 
@@ -96,7 +96,7 @@
     display: inline-block;
     padding: 12px 25px;
     text-decoration: none;
-    background: var(--clr);
+    background: hsl(187, 80%, 56%);
     color: white;
     font-weight: 500;
 }
@@ -105,15 +105,29 @@
     opacity: 0.8;
 }
 
+
+@media (max-width: 800px){
+    .container {
+        gap: 90px 60px;
+    }
+
+}
+
+
 @media (max-width: 480px) {
     .container .card {
-        width: 230px;
+        width: 260px;
         border-radius: 15px;
+        
     }
 
     .container .card .img-box {
-        width: 185px;
+        width: 205px;
         border-radius: 10px;
+    }
+
+    .container .card .content h2{
+        font-size: 1.2rem;
     }
 
     .container .card .content p {
